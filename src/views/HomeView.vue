@@ -1,13 +1,17 @@
 <template>
   <div class="home">
-    <h1>Jenill's 21st Birthday</h1>
-    <div class="slider">
-      <div class="slider-wrapper" :style="{ transform: `translateX(-${currentIndex * 100}%)` }">
-        <div v-for="(image, index) in images" :key="index" class="slide">
-          <img :src="image" :alt="'Slide ' + index" />
+    <h1 class="TopHeader">Jenill's 21st Birthday</h1>
+    <!-- <h2 class="TopText">Can You Believe It?</h2> -->
+
+      <div class="slider">
+        <div class="slider-wrapper" :style="{ transform: `translateX(-${currentIndex * 100}%)` }">
+          <div v-for="(image, index) in images" :key="index" class="slide">
+            <img :src="image" :alt="'Slide ' + index" />
+          </div>
         </div>
       </div>
-    </div>
+
+
   </div>
 </template>
 
@@ -49,11 +53,58 @@ export default {
 </script>
 
 <style scoped>
+.home {
+  display: grid;
+  background-color: lavenderblush;
+  justify-content: center;
+  align-items: center;
+}
+
+.TopHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  grid-row: 1;
+  
+  font-family: "Brush Script MT", "Lucida Handwriting", cursive;
+  font-size: 60px;
+  color:palevioletred;
+  text-shadow: 
+    -1px -1px 0 white,
+    1px -1px 0 white,
+    -1px 1px 0 white,
+    1px 1px 0 white;
+
+}
+
+.TopText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  grid-row: 2;
+  
+  /* font-family: "Brush Script MT", "Lucida Handwriting", cursive;
+  font-size: 60px;
+  color:palevioletred;
+  text-shadow: 
+    -1px -1px 0 white,
+    1px -1px 0 white,
+    -1px 1px 0 white,
+    1px 1px 0 white; */
+}
+
 .slider {
   overflow: hidden;
-  width: 277px;
-  height: 350px;
+  width: 415.5px; /* 277px width */
+  height: 525px; /* 350px height */
   position: relative;
+  
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+  grid-row: 3;
 }
 
 .slider-wrapper {
@@ -72,8 +123,13 @@ img {
   object-fit: cover;
 }
 
-.home {
-  background-color: lavenderblush;
+@media (max-width: 450px) {
+  .slider {
+    width: 80%;
+    max-width: none;
+    height: auto;
+    margin: 0 auto;
+  }
 }
 
 </style>

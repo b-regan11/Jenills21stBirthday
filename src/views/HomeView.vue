@@ -146,12 +146,14 @@ export default {
   width: 415.5px; /* 277px width */
   height: 525px; /* 350px height */
   position: relative;
-  
+  background-color: rgb(228, 205, 213);
   display: flex; 
   justify-self: center;
   justify-content: center; 
   align-items: center;
   grid-row: 5;
+  border-radius: 5%;
+  border: 5px solid rgb(228, 205, 213);
 }
 
 .slider-wrapper {
@@ -177,6 +179,7 @@ img {
     height: auto;
     margin: 0 auto;
     margin-bottom: 5px;
+    border-radius: 5%;
   }
   .TopHeader {
     margin: 0 0;
